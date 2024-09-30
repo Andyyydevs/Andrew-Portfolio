@@ -9,6 +9,11 @@
    <link rel="stylesheet" href="CSS/style.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+   <style>
+      /* Inline critical CSS here */
+   </style>
+   <link rel="preload" href="CSS/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+   <noscript><link rel="stylesheet" href="CSS/style.css"></noscript>
 </head>
 
 <body>
@@ -18,7 +23,7 @@
          <div class="intro-text animate__animated animate__fadeInUp animate__delay-0.2s">
             <div class="text-one">Hey There,</div>
             <div class="text-two">I'm Andrew Morgan</div>
-            <div class="text-three">A Graduate Developer From South Africa</div>
+            <div class="text-three"><span class="insert-Text"></span>Developer From South Africa</div>
             <div class="text-four">Specializing in Application Development</div>
          </div>
          <div class="media-icons animate__animated animate__fadeInUp animate__delay-1s">
@@ -36,7 +41,7 @@
          <h2>About Me</h2>
          <div class="about-content">
             <div class="profile-picture">
-               <img src="images/profile.png" alt="Andrew Morgan" class="profile-image">
+               <img src="images/profile.png" alt="Andrew Morgan" class="profile-image" loading="lazy">
             </div>
             <div class="text">
                <p>Hello! I'm Andrew, a dedicated software developer with a passion for creating innovative
@@ -179,6 +184,9 @@
          </div>
       </div>
    </footer>
+   <button id="back-to-top" title="Go to top">↑</button>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" defer></script>
+   <script src="JS/script.js" defer></script>
 </body>
 
 </html>
