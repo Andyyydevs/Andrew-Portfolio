@@ -1,3 +1,8 @@
+// Add this at the beginning of your script.js file
+window.onload = function() {
+    window.scrollTo(0, 0);
+};
+
 // Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -9,17 +14,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Typing animation
-var typed = new Typed('.insert-Text', {
+var typed = new Typed('.text-three', {
     strings: [
-        "An Aspiring",
-        "An Enthusiastic",
-        "A Dedicated",
         "An Innovative",
         "An Adaptable",
         "A Motivated",
         "A Passionate",
-        "A Resourceful",
-        "A Graduate"
+        "A Graduate Developer From South Africa"
     ],
     typeSpeed: 40,
     backSpeed: 40,
