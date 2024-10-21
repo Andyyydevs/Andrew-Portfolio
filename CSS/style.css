@@ -15,12 +15,15 @@ html {
 
 :root {
   --background-color: #ffffff;
-  --text-color: #000000;
-  --link-color: #748981;
-  --link-hover-color: #84afc6;
-  --primary-color: #507a6a;
+  --text-color: #333333;
+  --link-color: #507a6a;
+  --link-hover-color: #3a5b4e;
+  --primary-color: #5d7761;
   --secondary-color: #748981;
-  --highlight-color: #769481;
+  --highlight-color: #c3d3c5;
+  --card-background: #f9fafb;
+  --card-border: #e0e0e0;
+  --skill-background: #e8f5e9;
 }
 
 body {
@@ -43,7 +46,7 @@ h2 {
 
 p {
   font-size: 18px;
-  color: #666;
+  color: var(--text-color);
 }
 
 .home {
@@ -95,7 +98,7 @@ p {
 }
 
 .media-icons a {
-  color: #b4c1d0;
+  color: var(--link-color);
   font-size: 24px;
   margin: 0 10px;
   transition: color 0.3s;
@@ -181,12 +184,12 @@ p {
 /* About Styles */
 .about {
   padding: 60px 20px;
-  background-color: #f9fafb;
+  background-color: var(--card-background);
 }
 
 .about h2 {
   font-size: 36px;
-  color: #5d7761;
+  color: var(--primary-color);
   margin-bottom: 40px;
   text-align: center;
 }
@@ -207,7 +210,7 @@ p {
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #748981;
+  border: 4px solid var(--secondary-color);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -219,11 +222,11 @@ p {
 .about .text {
   max-width: 600px;
   margin: auto;
-  background-color: #ffffff;
+  background-color: var(--background-color);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  color: #3e564d;
+  color: var(--text-color);
   font-size: 18px;
   line-height: 1.6;
   text-align: center;
@@ -247,12 +250,12 @@ p {
 
 .skills {
   padding: 60px 20px;
-  background-color: #f9fafb;
+  background-color: var(--card-background);
 }
 
 .skills h2 {
   font-size: 36px;
-  color: #5d7761;
+  color: var(--primary-color);
   margin-bottom: 40px;
   text-align: center;
 }
@@ -264,7 +267,7 @@ p {
 }
 
 .skills .skills-category {
-  background-color: #ffffff;
+  background-color: var(--background-color);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -272,18 +275,18 @@ p {
 
 .skills .skills-category h3 {
   font-size: 24px;
-  color: #748981;
+  color: var(--primary-color);
   margin-bottom: 20px;
   text-align: center;
 }
 
 .skills .skill-item {
-  background: #e8f5e9;
+  background: var(--skill-background);
   margin: 10px;
   padding: 15px 20px;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  color: #3e564d;
+  color: var(--text-color);
   font-size: 16px;
   transition: transform 0.3s, box-shadow 0.3s;
   display: inline-block;
@@ -316,13 +319,13 @@ p {
   padding: 40px 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #f9fafb;
+  background-color: var(--card-background);
   margin: 40px 0;
 }
 
 .work-experience h2 {
   font-size: 36px;
-  color: #5d7761;
+  color: var(--primary-color);
   margin-bottom: 30px;
   text-align: center;
 }
@@ -337,7 +340,7 @@ p {
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
-  background-color: #ffffff;
+  background-color: var(--background-color);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -347,8 +350,8 @@ p {
 }
 
 .work-experience .work-item-header {
-  background-color: #5d7761;
-  color: #ffffff;
+  background-color: var(--primary-color);
+  color: var(--background-color);
   padding: 15px 20px;
   font-size: 24px;
   display: flex;
@@ -362,30 +365,30 @@ p {
 }
 
 .work-experience .work-item-header .company {
-  color: #c3d3c5;
+  color: var(--highlight-color);
   font-weight: 400;
 }
 
 .work-experience .work-item-header .date {
   font-size: 16px;
-  color: #e0e7e2
+  color: var(--background-color);
 }
 
 .work-experience .work-item-content {
   padding: 20px;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid var(--card-border);
 }
 
 .work-experience .work-item-content p {
   font-size: 18px;
   margin-bottom: 10px;
-  color: #333;
+  color: var(--text-color);
 }
 
 .work-experience .work-item-content ul {
   list-style: disc inside;
   padding-left: 20px;
-  color: #555;
+  color: var(--text-color);
 }
 
 .work-experience .work-item-content ul li {
@@ -406,10 +409,10 @@ p {
 /* Footer Styles */
 
 .footer {
-  background-color: #5d7761;
+  background-color: var(--primary-color);
   padding: 20px 0;
   text-align: center;
-  border-top: 1px solid #4e6354;
+  border-top: 1px solid var(--card-border);
   transition: background-color 0.3s, border-color 0.3s;
 }
 
@@ -422,7 +425,7 @@ p {
 }
 
 .footer-left p {
-  color: #d6e8d2;
+  color: var(--background-color);
   margin: 0;
 }
 
@@ -437,14 +440,14 @@ p {
 }
 
 .footer-content .social-icons a {
-  color: #d6e8d2;
+  color: var(--background-color);
   font-size: 20px;
   margin: 0 10px;
   transition: color 0.3s, transform 0.3s;
 }
 
 .footer-content .social-icons a:hover {
-  color: #ffffff;
+  color: var(--highlight-color);
   transform: scale(1.1);
 }
 
@@ -476,8 +479,8 @@ p {
     z-index: 99;
     border: none;
     outline: none;
-    background-color: #576877;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--background-color);
     cursor: pointer;
     padding: 15px;
     border-radius: 50%;
@@ -486,7 +489,7 @@ p {
 }
 
 #back-to-top:hover {
-    background-color: #bdbdbd;
+    background-color: var(--link-hover-color);
 }
 
 /* Add animation to skills items */
@@ -499,7 +502,6 @@ p {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* Enhance work experience section */
 .work-item-header {
     cursor: pointer;
 }
@@ -512,4 +514,64 @@ p {
 
 .work-item[open] .work-item-content {
     max-height: 500px;
+}
+
+.work-status {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--primary-color);
+    border-radius: 20px;
+    padding: 8px 15px;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.status-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #4CAF50;  /* Green for "Open to Work" */
+    margin-right: 10px;
+    animation: pulse 2s infinite;
+}
+
+.status-text {
+    color: var(--background-color);
+    font-weight: 600;
+    font-size: 16px;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+    }
+}
+
+.work-status:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.not-open .status-indicator {
+    background-color: #FF5722;  /* Red for "Not Open to Work" */
+}
+
+.not-open .status-text {
+    color: var(--background-color);
+}
+
+@media (max-width: 768px) {
+    .work-status {
+        padding: 6px 12px;
+    }
+
+    .status-text {
+        font-size: 14px;
+    }
 }

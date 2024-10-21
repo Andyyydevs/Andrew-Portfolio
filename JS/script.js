@@ -1,4 +1,3 @@
-// Add this at the beginning of your script.js file
 window.onload = function() {
     window.scrollTo(0, 0);
 };
@@ -22,9 +21,12 @@ var typed = new Typed('.text-three', {
         "A Passionate",
         "A Graduate Developer From South Africa"
     ],
-    typeSpeed: 40,
+    typeSpeed: 60,
     backSpeed: 40,
-    loop: false
+    loop: false,
+    onComplete: function(self) {
+        self.cursor.style.display = 'none'; // Hide the cursor
+    }
 });
 
 // Interactive skills
@@ -54,3 +56,15 @@ backToTopButton.onclick = function() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
+
+const openToWork = true;
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const workStatus = document.querySelector('.work-status');
+    const statusText = workStatus.querySelector('.status-text');
+
+    if (!openToWork) {
+        workStatus.classList.add('not-open');
+        statusText.textContent = 'Not Open to Work';
+    }
+});
