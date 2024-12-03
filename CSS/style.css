@@ -482,10 +482,12 @@ p {
     background-color: var(--primary-color);
     color: var(--background-color);
     cursor: pointer;
-    padding: 15px;
+    padding: 15px 18px;
     border-radius: 50%;
     font-size: 18px;
     transition: background-color 0.3s;
+    width: 50px;
+    height: 50px;
 }
 
 #back-to-top:hover {
