@@ -14,16 +14,16 @@ html {
 }
 
 :root {
-  --background-color: #ffffff;
+  --background-color: #7d8a6e;
   --text-color: #333333;
-  --link-color: #507a6a;
+  --link-color: #546b51;
   --link-hover-color: #3a5b4e;
-  --primary-color: #5d7761;
-  --secondary-color: #748981;
+  --primary-color: #2a3e33;
+  --secondary-color: #404e41;
   --highlight-color: #c3d3c5;
-  --card-background: #f9fafb;
+  --card-background: #b5b89b;
   --card-border: #e0e0e0;
-  --skill-background: #e8f5e9;
+  --skill-background: #b5b89b;
 }
 
 body {
@@ -42,6 +42,16 @@ h2 {
   font-size: 36px;
   margin-bottom: 20px;
   color: var(--primary-color);
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--primary-color);
+  margin: 10px auto 0;
 }
 
 p {
@@ -54,22 +64,33 @@ p {
   width: 100%;
   background: url("../images/main.jpg") no-repeat center center/cover;
   background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.home::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .home .home-content {
-  width: 90%;
-  height: 100%;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  z-index: 1;
   text-align: center;
+  color: white;
 }
 
 .home .intro-text .text-one {
   font-size: 25px;
   color: var(--highlight-color);
+  animation: fadeInDown 1s ease-in-out;
 }
 
 .home .intro-text .text-two {
@@ -77,121 +98,46 @@ p {
   font-size: 60px;
   font-weight: 600;
   margin-top: 10px;
+  animation: fadeInUp 1s ease-in-out;
 }
 
 .home .intro-text .text-three {
   font-size: 40px;
   margin: 5px 0;
   color: var(--highlight-color);
+  animation: fadeInUp 1.5s ease-in-out;
 }
 
 .home .intro-text .text-four {
   font-size: 23px;
   margin: 5px 0;
   color: var(--highlight-color);
+  animation: fadeInUp 2s ease-in-out;
 }
 
 .media-icons {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  animation: fadeInUp 2.5s ease-in-out;
 }
 
 .media-icons a {
   color: var(--link-color);
   font-size: 24px;
   margin: 0 10px;
-  transition: color 0.3s;
+  transition: color 0.3s, transform 0.3s;
 }
 
 .media-icons a:hover {
   color: var(--link-hover-color);
+  transform: translateY(-5px);
 }
 
-@media (max-width: 1024px) {
-  .home {
-    background-attachment: scroll;
-  }
-
-  .home .intro-text .text-two {
-    font-size: 50px;
-  }
-
-  .home .intro-text .text-three {
-    font-size: 35px;
-  }
-
-  .home .intro-text .text-four {
-    font-size: 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  .home-content {
-    text-align: center;
-    padding: 20px;
-  }
-
-  .home .intro-text .text-one {
-    font-size: 20px;
-  }
-
-  .home .intro-text .text-two {
-    font-size: 40px;
-  }
-
-  .home .intro-text .text-three {
-    font-size: 30px;
-  }
-
-  .home .intro-text .text-four {
-    font-size: 18px;
-  }
-
-  .media-icons {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-
-  .media-icons a {
-    margin: 0 10px;
-  }
-}
-
-@media (max-width: 480px) {
-  .home .intro-text .text-one {
-    font-size: 18px;
-  }
-
-  .home .intro-text .text-two {
-    font-size: 35px;
-  }
-
-  .home .intro-text .text-three {
-    font-size: 25px;
-  }
-
-  .home .intro-text .text-four {
-    font-size: 16px;
-  }
-
-  .media-icons a {
-    font-size: 20px;
-  }
-}
-
-/* About Styles */
+/* About Section */
 .about {
   padding: 60px 20px;
   background-color: var(--card-background);
-}
-
-.about h2 {
-  font-size: 36px;
-  color: var(--primary-color);
-  margin-bottom: 40px;
-  text-align: center;
 }
 
 .about .about-content {
@@ -199,10 +145,6 @@ p {
   flex-direction: column;
   align-items: center;
   gap: 40px;
-}
-
-.about .profile-picture {
-  text-align: center;
 }
 
 .about .profile-picture img {
@@ -232,32 +174,10 @@ p {
   text-align: center;
 }
 
-@media (min-width: 768px) {
-  .about .profile-picture img {
-    width: 200px;
-    height: 200px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .about .profile-picture img {
-    width: 250px;
-    height: 250px;
-  }
-}
-
-/* Skills Styles */
-
+/* Skills Section */
 .skills {
   padding: 60px 20px;
   background-color: var(--card-background);
-}
-
-.skills h2 {
-  font-size: 36px;
-  color: var(--primary-color);
-  margin-bottom: 40px;
-  text-align: center;
 }
 
 .skills .skills-list {
@@ -271,13 +191,6 @@ p {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
-}
-
-.skills .skills-category h3 {
-  font-size: 24px;
-  color: var(--primary-color);
-  margin-bottom: 20px;
-  text-align: center;
 }
 
 .skills .skill-item {
@@ -298,36 +211,13 @@ p {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive styles */
-@media (max-width: 768px) {
-  .skills h2 {
-    font-size: 28px;
-  }
-
-  .skills .skills-category h3 {
-    font-size: 20px;
-  }
-
-  .skills .skill-item {
-    font-size: 14px;
-  }
-}
-
-/* Work Experience Styles */
-
+/* Work Experience Section */
 .work-experience {
   padding: 40px 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: var(--card-background);
   margin: 40px 0;
-}
-
-.work-experience h2 {
-  font-size: 36px;
-  color: var(--primary-color);
-  margin-bottom: 30px;
-  text-align: center;
 }
 
 .work-experience .work-list {
@@ -357,6 +247,7 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
 }
 
 .work-experience .work-item-header h3 {
@@ -377,43 +268,21 @@ p {
 .work-experience .work-item-content {
   padding: 20px;
   border-top: 1px solid var(--card-border);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
 }
 
-.work-experience .work-item-content p {
-  font-size: 18px;
-  margin-bottom: 10px;
-  color: var(--text-color);
+.work-experience .work-item[open] .work-item-content {
+  max-height: 500px;
 }
 
-.work-experience .work-item-content ul {
-  list-style: disc inside;
-  padding-left: 20px;
-  color: var(--text-color);
-}
-
-.work-experience .work-item-content ul li {
-  margin-bottom: 10px;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-  .work-experience h2 {
-    font-size: 28px;
-  }
-
-  .work-experience .work-item-header h3 {
-    font-size: 20px;
-  }
-}
-
-/* Footer Styles */
-
+/* Footer Section */
 .footer {
   background-color: var(--primary-color);
   padding: 20px 0;
   text-align: center;
   border-top: 1px solid var(--card-border);
-  transition: background-color 0.3s, border-color 0.3s;
 }
 
 .footer-content {
@@ -429,151 +298,60 @@ p {
   margin: 0;
 }
 
-.footer-right {
-  display: flex;
-  align-items: center;
-}
-
-.footer-content .social-icons {
-  display: flex;
-  justify-content: center;
-}
-
-.footer-content .social-icons a {
+.footer-right .social-icons a {
   color: var(--background-color);
   font-size: 20px;
   margin: 0 10px;
   transition: color 0.3s, transform 0.3s;
 }
 
-.footer-content .social-icons a:hover {
+.footer-right .social-icons a:hover {
   color: var(--highlight-color);
-  transform: scale(1.1);
+  transform: translateY(-5px);
 }
 
-/* Responsive styles */
-@media (max-width: 768px) {
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .footer-right {
-    margin-top: 10px;
-  }
-}
-
-/* Hover effect for work experience items */
-.work-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-}
-
-/* Back to top button */
+/* Back to Top Button */
 #back-to-top {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 30px;
-    z-index: 99;
-    border: none;
-    outline: none;
-    background-color: var(--primary-color);
-    color: var(--background-color);
-    cursor: pointer;
-    padding: 15px 18px;
-    border-radius: 50%;
-    font-size: 18px;
-    transition: background-color 0.3s;
-    width: 50px;
-    height: 50px;
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  cursor: pointer;
+  padding: 15px 18px;
+  border-radius: 50%;
+  font-size: 18px;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 #back-to-top:hover {
-    background-color: var(--link-hover-color);
+  background-color: var(--link-hover-color);
+  transform: scale(1.1);
 }
 
-/* Add animation to skills items */
-.skill-item {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.skill-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.work-item-header {
-    cursor: pointer;
-}
-
-.work-item-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-}
-
-.work-item[open] .work-item-content {
-    max-height: 500px;
-}
-
-.work-status {
-    display: inline-flex;
-    align-items: center;
-    background-color: var(--primary-color);
-    border-radius: 20px;
-    padding: 8px 15px;
-    margin-top: 20px;
-    transition: all 0.3s ease;
-}
-
-.status-indicator {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #4CAF50;  /* Green for "Open to Work" */
-    margin-right: 10px;
-    animation: pulse 2s infinite;
-}
-
-.status-text {
-    color: var(--background-color);
-    font-weight: 600;
-    font-size: 16px;
-}
-
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
-    }
-    70% {
-        box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
-    }
-}
-
-.work-status:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.not-open .status-indicator {
-    background-color: #FF5722;  /* Red for "Not Open to Work" */
-}
-
-.not-open .status-text {
-    color: var(--background-color);
-}
-
-@media (max-width: 768px) {
-    .work-status {
-        padding: 6px 12px;
-    }
-
-    .status-text {
-        font-size: 14px;
-    }
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
