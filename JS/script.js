@@ -1,7 +1,35 @@
 // Back to Top Button
 const backToTopButton = document.getElementById("back-to-top");
+//const themeToggle = document.getElementById('themeToggle');
+//const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
-window.onscroll = function() {
+// Check for saved theme preference or use system preference
+// const currentTheme = localStorage.getItem('theme') ||
+//   (prefersDarkScheme.matches ? 'dark' : 'light');
+
+// // Apply the current theme
+// if (currentTheme === 'dark') {
+//   document.body.setAttribute('data-theme', 'dark');
+//   themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+// } else {
+//   document.body.removeAttribute('data-theme');
+//   themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+// }
+
+// Toggle theme on button click
+// themeToggle.addEventListener('click', function () {
+//   if (document.body.getAttribute('data-theme') === 'dark') {
+//     document.body.removeAttribute('data-theme');
+//     localStorage.setItem('theme', 'light');
+//     themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+//   } else {
+//     document.body.setAttribute('data-theme', 'dark');
+//     localStorage.setItem('theme', 'dark');
+//     themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+//   }
+// });
+
+window.onscroll = function () {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     backToTopButton.style.display = "block";
   } else {
@@ -45,7 +73,7 @@ typeWriter();
 
 // Smooth Scroll for Anchor Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener("click", function(e) {
+  anchor.addEventListener("click", function (e) {
     e.preventDefault();
     document.querySelector(this.getAttribute("href")).scrollIntoView({
       behavior: "smooth"
