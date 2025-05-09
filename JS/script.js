@@ -44,7 +44,7 @@ backToTopButton.addEventListener("click", () => {
 
 // Typing Animation for Home Section
 const textThree = document.querySelector(".text-three");
-const strings = ["Software Developer", "Application Developer", "Coffee Enthusiast"];
+const strings = ["Passionate Developer", "Coffee Enthusiast"];
 let currentStringIndex = 0;
 let currentCharIndex = 0;
 
