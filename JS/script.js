@@ -1,82 +1,128 @@
 // Back to Top Button
 const backToTopButton = document.getElementById("back-to-top");
-//const themeToggle = document.getElementById('themeToggle');
-//const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-
-// Check for saved theme preference or use system preference
-// const currentTheme = localStorage.getItem('theme') ||
-//   (prefersDarkScheme.matches ? 'dark' : 'light');
-
-// // Apply the current theme
-// if (currentTheme === 'dark') {
-//   document.body.setAttribute('data-theme', 'dark');
-//   themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-// } else {
-//   document.body.removeAttribute('data-theme');
-//   themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-// }
-
-// Toggle theme on button click
-// themeToggle.addEventListener('click', function () {
-//   if (document.body.getAttribute('data-theme') === 'dark') {
-//     document.body.removeAttribute('data-theme');
-//     localStorage.setItem('theme', 'light');
-//     themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-//   } else {
-//     document.body.setAttribute('data-theme', 'dark');
-//     localStorage.setItem('theme', 'dark');
-//     themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-//   }
-// });
 
 window.onscroll = function () {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    backToTopButton.style.display = "block";
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    backToTopButton.style.display = "flex";
   } else {
     backToTopButton.style.display = "none";
   }
 };
 
 backToTopButton.addEventListener("click", () => {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
 });
 
 // Typing Animation for Home Section
 const textThree = document.querySelector(".text-three");
-const strings = ["Passionate Developer", "Coffee Enthusiast"];
+const strings = ["Full-Stack Developer", "Problem Solver", "Coffee Enthusiast", "Tech Innovator"];
 let currentStringIndex = 0;
 let currentCharIndex = 0;
+let isDeleting = false;
 
 function typeWriter() {
-  if (currentCharIndex < strings[currentStringIndex].length) {
-    textThree.textContent += strings[currentStringIndex].charAt(currentCharIndex);
-    currentCharIndex++;
-    setTimeout(typeWriter, 100);
-  } else {
-    setTimeout(eraseText, 2000);
-  }
-}
+  const currentString = strings[currentStringIndex];
 
-function eraseText() {
-  if (currentCharIndex > 0) {
-    textThree.textContent = strings[currentStringIndex].substring(0, currentCharIndex - 1);
+  if (isDeleting) {
+    textThree.textContent = currentString.substring(0, currentCharIndex - 1);
     currentCharIndex--;
-    setTimeout(eraseText, 50);
   } else {
-    currentStringIndex = (currentStringIndex + 1) % strings.length;
-    setTimeout(typeWriter, 500);
+    textThree.textContent = currentString.substring(0, currentCharIndex + 1);
+    currentCharIndex++;
   }
+
+  let typeSpeed = isDeleting ? 50 : 100;
+
+  if (!isDeleting && currentCharIndex === currentString.length) {
+    typeSpeed = 2000;
+    isDeleting = true;
+  } else if (isDeleting && currentCharIndex === 0) {
+    isDeleting = false;
+    currentStringIndex = (currentStringIndex + 1) % strings.length;
+    typeSpeed = 500;
+  }
+
+  setTimeout(typeWriter, typeSpeed);
 }
 
-typeWriter();
+// Start typing animation
+setTimeout(typeWriter, 1000);
 
-// Smooth Scroll for Anchor Links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener("click", function (e) {
+// Smooth Scroll for Navigation
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', function (e) {
     e.preventDefault();
-    document.querySelector(this.getAttribute("href")).scrollIntoView({
-      behavior: "smooth"
-    });
+    const targetId = this.getAttribute('href');
+    const targetSection = document.querySelector(targetId);
+
+    if (targetSection) {
+      targetSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+
+      // Update active navigation
+      document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+      this.classList.add('active');
+    }
+  });
+});
+
+// Update active navigation on scroll
+window.addEventListener('scroll', () => {
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    if (scrollY >= (sectionTop - 200)) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === `#${current}`) {
+      link.classList.add('active');
+    }
+  });
+});
+
+// Add scroll animations
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, observerOptions);
+
+// Observe all sections
+document.querySelectorAll('section').forEach(section => {
+  section.style.opacity = '0';
+  section.style.transform = 'translateY(30px)';
+  section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  observer.observe(section);
+});
+
+// Project cards hover effect
+document.querySelectorAll('.project-card').forEach(card => {
+  card.addEventListener('mouseenter', function () {
+    this.style.transform = 'translateY(-10px) rotateX(5deg)';
+  });
+
+  card.addEventListener('mouseleave', function () {
+    this.style.transform = 'translateY(0) rotateX(0)';
   });
 });

@@ -6,19 +6,23 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Andrew | Portfolio</title>
    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-   <link rel="stylesheet" href="CSS/style.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
-   <link rel="preload" href="CSS/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-   <noscript><link rel="stylesheet" href="CSS/style.css"></noscript>
+   <link rel="stylesheet" href="./CSS/style.css">
 </head>
 
 <body>
-       <!-- Theme Toggle Button -->
-       <!-- <div class="theme-toggle" id="themeToggle">
-         <i class="fas fa-moon"></i>
-         <i class="fas fa-sun"></i>
-     </div> -->
+   <!-- Modern Navigation -->
+   <nav class="navbar">
+      <ul>
+         <li><a href="#home" class="nav-link active">Home</a></li>
+         <li><a href="#about" class="nav-link">About</a></li>
+         <li><a href="#projects" class="nav-link">Projects</a></li>
+         <li><a href="#work-experience" class="nav-link">Experience</a></li>
+         <li><a href="#skills" class="nav-link">Skills</a></li>
+      </ul>
+   </nav>
+
    <!-- Home Section Start -->
    <section class="home" id="home">
       <div class="home-content">
@@ -26,11 +30,10 @@
             <div class="text-one">Hey There,</div>
             <div class="text-two">I'm Andrew Morgan</div>
             <div class="text-three"></div>
-            <div class="text-four">Specializing in Application Development</div>
+            <div class="text-four">Crafting Digital Solutions & Experiences</div>
          </div>
          <div class="media-icons animate__animated animate__fadeInUp animate__delay-1s">
             <a href="mailto:andyyydevs@gmail.com"><i class="fas fa-envelope"></i></a>
-            <a href="files/Andrew_CV.pdf" target="_blank"><i class="fas fa-file-text"></i></a>
             <a href="https://www.linkedin.com/in/andyyydevs/"><i class="fab fa-linkedin-in"></i></a>
             <a href="https://github.com/Andyyydevs"><i class="fab fa-github"></i></a>
          </div>
@@ -42,111 +45,195 @@
       <div class="container">
          <h2>About Me</h2>
          <div class="about-content">
-            <!-- <div class="work-status">
-               <span class="status-indicator"></span>
-               <span class="status-text">Open to Work</span>
-            </div> -->
             <div class="text">
-               <p>Hello! I'm Andrew, a dedicated software developer with a passion for creating innovative
-                  applications.
-                  I specialize in application development and possess a strong background in various programming
-                  languages and frameworks.
-                  I am an adaptable professional, skilled in data structures, and committed to continuous
-                  learning.
-                  I thrive in both collaborative and independent settings, and I am dedicated to delivering
-                  high-quality work that exceeds expectations.</p>
+               <p>Hello! I'm Andrew, a passionate software developer with a love for creating innovative digital
+                  solutions. I specialize in full-stack development with expertise in modern frameworks and
+                  technologies.</p>
+               <p>My journey in tech has been driven by curiosity and a desire to solve real-world problems through
+                  code. I thrive in collaborative environments and am always eager to learn new technologies and
+                  methodologies.</p>
+               <p>When I'm not coding, you'll find me exploring the latest tech trends, contributing to open-source
+                  projects, or enjoying a good cup of coffee while brainstorming the next big idea.</p>
+            </div>
+            <div class="stats">
+               <div class="stat-item">
+                  <div class="stat-number">3+</div>
+                  <div class="stat-label">Years Experience</div>
+               </div>
+               <div class="stat-item">
+                  <div class="stat-number">15+</div>
+                  <div class="stat-label">Projects Completed</div>
+               </div>
+               <div class="stat-item">
+                  <div class="stat-number">8+</div>
+                  <div class="stat-label">Technologies</div>
+               </div>
+               <div class="stat-item">
+                  <div class="stat-number">100%</div>
+                  <div class="stat-label">Dedication</div>
+               </div>
             </div>
          </div>
       </div>
    </section>
 
    <!-- Projects Section Start -->
-   <section class="work-experience" id="projects">
-      <h2>Work Experience</h2>
-      <div class="work-list">
-         <details class="work-item">
-            <summary class="work-item-header">
-               <h3>Freelance Flowsheet Developer <span class="company">@ Entecom Food Safety</span></h3>
-               <p class="date">April 2025 -Now</p>
-            </summary>
-            <div class="work-item-content">
-               
+   <section class="projects" id="projects">
+      <div class="container">
+         <h2>Featured Projects</h2>
+         <div class="projects-grid">
+            <div class="project-card">
+               <div class="project-header">
+                  <h3 class="project-title">TodoFlow</h3>
+                  <p class="project-description">A full-stack Todo application.</p>
+               </div>
+               <div class="project-content">
+                  <div class="project-tech">
+                     <span class="tech-tag">Node.js</span>
+                     <span class="tech-tag">Express.js</span>
+                     <span class="tech-tag">JWT</span>
+                     <span class="tech-tag">bcryptjs</span>
+                     <span class="tech-tag">SQLite</span>
+                  </div>
+                  <div class="project-links">
+                     <a href="#" class="project-link">
+                        <i class="fab fa-github"></i>
+                        <span>View Code</span>
+                     </a>
+                     <a href="#" class="project-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        <span>Live Demo</span>
+                     </a>
+                  </div>
+               </div>
             </div>
-         </details>
-         <details class="work-item">
-            <summary class="work-item-header">
-               <h3>Software Developer Intern <span class="company">@ LightHub Digital</span></h3>
-               <p class="date">June - August 2023</p>
-            </summary>
-            <div class="work-item-content">
-               <p>Key Responsibilities:</p>
-               <ul>
-                  <li>Designed and developed sophisticated ASP.NET applications using C# to enhance client and
-                     business operations, showcasing a commitment to cutting-edge technology.</li>
-                  <li>Implemented databases using SQL, significantly improving company data infrastructure for
-                     enhanced efficiency and management.</li>
-               </ul>
+            <div class="project-card">
+               <div class="project-header">
+                  <h3 class="project-title">Portfolio Website</h3>
+                  <p class="project-description">Responsive portfolio website.
+                  </p>
+               </div>
+               <div class="project-content">
+                  <div class="project-tech">
+                     <span class="tech-tag">HTML5</span>
+                     <span class="tech-tag">CSS3</span>
+                     <span class="tech-tag">JavaScript</span>
+                     <span class="tech-tag">GSAP</span>
+                  </div>
+                  <div class="project-links">
+                     <a href="#" class="project-link">
+                        <i class="fab fa-github"></i>
+                        <span>View Code</span>
+                     </a>
+                     <a href="#" class="project-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        <span>Live Demo</span>
+                     </a>
+                  </div>
+               </div>
             </div>
-         </details>
-         <details class="work-item">
-            <summary class="work-item-header">
-               <h3>Database Developer Intern <span class="company">@ Toco Currency</span></h3>
-               <p class="date">November 2022 - January 2023</p>
-            </summary>
-            <div class="work-item-content">
-               <p>Key Responsibilities:</p>
-               <ul>
-                  <li>Created an online database using QuickBase to track and manage customer information and
-                     recent sales.</li>
-                  <li>Authored and maintained technical and functional specifications to document database
-                     objectives and requirements.</li>
-                  <li>Refined databases to align with needs and goals established during the planning process.
-                  </li>
-               </ul>
-            </div>
-         </details>
+         </div>
+      </div>
+   </section>
+
+   <!-- Work Experience Section Start -->
+   <section class="work-experience" id="work-experience">
+      <div class="container">
+         <h2>Work Experience</h2>
+         <div class="work-list">
+            <details class="work-item">
+               <summary class="work-item-header">
+                  <h3>Freelance Flowsheet Developer <span class="company">@ Entecom Food Safety</span></h3>
+                  <p class="date">April 2025 - Present</p>
+               </summary>
+               <div class="work-item-content">
+                  <p>Key Responsibilities:</p>
+                  <ul>
+                     <li>Developing custom flowsheet solutions for food safety compliance and process optimization</li>
+                     <li>Collaborating with food safety experts to translate complex requirements into technical
+                        specifications</li>
+                     <li>Implementing automated reporting systems to streamline compliance documentation</li>
+                     <li>Providing ongoing support and maintenance for deployed solutions</li>
+                  </ul>
+               </div>
+            </details>
+
+            <details class="work-item">
+               <summary class="work-item-header">
+                  <h3>Software Developer Intern <span class="company">@ LightHub Digital</span></h3>
+                  <p class="date">June - August 2023</p>
+               </summary>
+               <div class="work-item-content">
+                  <p>Key Responsibilities:</p>
+                  <ul>
+                     <li>Designed and developed sophisticated ASP.NET applications using C# to enhance client and
+                        business operations, showcasing a commitment to cutting-edge technology</li>
+                     <li>Implemented databases using SQL, significantly improving company data infrastructure for
+                        enhanced efficiency and management</li>
+                     <li>Collaborated with senior developers on code reviews and optimization strategies</li>
+                     <li>Participated in agile development processes and sprint planning meetings</li>
+                  </ul>
+               </div>
+            </details>
+
+            <details class="work-item">
+               <summary class="work-item-header">
+                  <h3>Database Developer Intern <span class="company">@ Toco Currency</span></h3>
+                  <p class="date">November 2022 - January 2023</p>
+               </summary>
+               <div class="work-item-content">
+                  <p>Key Responsibilities:</p>
+                  <ul>
+                     <li>Created an online database using QuickBase to track and manage customer information and recent
+                        sales</li>
+                     <li>Authored and maintained technical and functional specifications to document database objectives
+                        and requirements</li>
+                     <li>Refined databases to align with needs and goals established during the planning process</li>
+                     <li>Developed automated reports and dashboards for stakeholder visibility</li>
+                  </ul>
+               </div>
+            </details>
+         </div>
       </div>
    </section>
 
    <!-- Skills Start -->
    <section class="skills" id="skills">
       <div class="container">
-         <h2>Skills</h2>
+         <h2>Skills & Technologies</h2>
          <div class="skills-list">
             <div class="skills-category">
-               <h3>Languages</h3>
-               <div class="skill-item">JavaScript</div>
-               <div class="skill-item">SQL</div>
-               <div class="skill-item">C++</div>
-               <div class="skill-item">C#</div>
-               <div class="skill-item">Python</div>
-               <div class="skill-item">Java</div>
-               <div class="skill-item">Dart</div>
+               <h3>Programming Languages</h3>
+               <div class="skill-item"><span>JavaScript</span></div>
+               <div class="skill-item"><span>SQL</span></div>
+               <div class="skill-item"><span>C#</span></div>
+               <div class="skill-item"><span>Python</span></div>
+               <div class="skill-item"><span>Java</span></div>
+               <div class="skill-item"><span>Dart</span></div>
             </div>
             <div class="skills-category">
-               <h3>Tools + Frameworks + Libraries</h3>
-               <div class="skill-item">jQuery</div>
-               <div class="skill-item">Git</div>
-               <div class="skill-item">GitHub</div>
-               <div class="skill-item">VSCode</div>
-               <div class="skill-item">MongoDB</div>
-               <div class="skill-item">Flutter</div>
-               <div class="skill-item">Express.js</div>
-               <div class="skill-item">Node.js</div>
-               <div class="skill-item">BeautifulSoup</div>
-               <div class="skill-item">Quickbase</div>
-               <div class="skill-item">Flowsheet</div>
+               <h3>Frameworks & Tools</h3>
+               <div class="skill-item"><span>Node.js</span></div>
+               <div class="skill-item"><span>Express.js</span></div>
+               <div class="skill-item"><span>Flutter</span></div>
+               <div class="skill-item"><span>MongoDB</span></div>
+               <div class="skill-item"><span>Git & GitHub</span></div>
+               <div class="skill-item"><span>VS Code</span></div>
+               <div class="skill-item"><span>jQuery</span></div>
+               <div class="skill-item"><span>BeautifulSoup</span></div>
+               <div class="skill-item"><span>Quickbase</span></div>
+               <div class="skill-item"><span>Flowsheet</span></div>
             </div>
             <div class="skills-category">
-               <h3>Coursework</h3>
-               <div class="skill-item">Object Oriented Programming</div>
-               <div class="skill-item">Advanced Database</div>
-               <div class="skill-item">IT Project Management</div>
-               <div class="skill-item">System Analysis and Design</div>
-               <div class="skill-item">Server Side Web Architecture</div>
-               <div class="skill-item">Mobile App Development (Android)</div>
-               <div class="skill-item">Data Structures & Algorithms</div>
-               <div class="skill-item">Operating Systems (Linux)</div>
+               <h3>Academic Background</h3>
+               <div class="skill-item"><span>Object Oriented Programming</span></div>
+               <div class="skill-item"><span>Advanced Database Systems</span></div>
+               <div class="skill-item"><span>IT Project Management</span></div>
+               <div class="skill-item"><span>System Analysis & Design</span></div>
+               <div class="skill-item"><span>Server Side Web Architecture</span></div>
+               <div class="skill-item"><span>Mobile App Development</span></div>
+               <div class="skill-item"><span>Data Structures & Algorithms</span></div>
+               <div class="skill-item"><span>Operating Systems (Linux)</span></div>
             </div>
          </div>
       </div>
@@ -156,20 +243,20 @@
    <footer class="footer">
       <div class="footer-content">
          <div class="footer-left">
-            <p>&copy; 2025 Andrew Morgan. All rights reserved.</p>
+            <p>&copy; 2025 Andrew Morgan. Crafted with passion and lots of coffee ☕</p>
          </div>
          <div class="footer-right">
-            <!-- <div class="social-icons">
+            <div class="social-icons">
                <a href="mailto:andyyydevs@gmail.com"><i class="fas fa-envelope"></i></a>
                <a href="https://www.linkedin.com/in/andyyydevs/"><i class="fab fa-linkedin-in"></i></a>
                <a href="https://github.com/Andyyydevs"><i class="fab fa-github"></i></a>
-            </div> -->
+            </div>
          </div>
       </div>
    </footer>
-   <button id="back-to-top" title="Go to top">↑</button>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" defer></script>
-   <script src="JS/script.js" defer></script>
+
+   <button id="back-to-top" title="Back to top">↑</button>
+   <script src="./JS/script.js"> </script>
 </body>
 
 </html>
